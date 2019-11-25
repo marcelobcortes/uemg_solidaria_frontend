@@ -38,7 +38,7 @@
                 var usu_nome = $("#usu_nome").val();
 
                 $.ajax({
-                    url: "http://localhost:2017/private/user",
+                    url: "http://solidario.sytes.net:2017/private/user",
                     headers: {
                         Authorization: "Bearer " + sessionStorage.token,
                     },
@@ -63,7 +63,7 @@
                 var doa_quantidade = $("#doa_quantidade").val();
 
                 $.ajax({
-                    url: "http://localhost:2017/private/doacao",
+                    url: "http://solidario.sytes.net:2017/private/doacao",
                     headers: {
                         Authorization: "Bearer " + sessionStorage.token,
                     },

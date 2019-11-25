@@ -51,7 +51,7 @@
                         return true;
                     });
 
-                    $.post("http://localhost:2017/public/user",
+                    $.post("http://solidario.sytes.net:2017/public/user",
                         { usu_email, usu_password, usu_nome, usu_ra },
                         (r)=>{
                             sessionStorage.token = r.token;

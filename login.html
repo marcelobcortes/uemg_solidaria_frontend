@@ -73,7 +73,7 @@
 				var usu_email = $("#usu_email").val();
 				var usu_password = $("#usu_password").val();
 			
-				$.post("http://localhost:2017/public/login",
+				$.post("http://solidario.sytes.net:2017/public/login",
 					{ usu_email, usu_password },
 					(r)=>{
 						sessionStorage.token = r.token;
