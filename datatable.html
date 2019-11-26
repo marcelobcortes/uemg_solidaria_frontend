@@ -28,7 +28,7 @@
                 }
 
                 $.ajax({
-                    url: `http://localhost:2017/admin/doacao/${usu_id}`,
+                    url: `http://solidario.sytes.net:2017/admin/doacao/${usu_id}`,
                     headers: {
                         Authorization: "Bearer " + sessionStorage.token,
                     },
@@ -48,7 +48,7 @@
                 const doa_quantidade = $(`:input[id="${doa_id}"]`).val();
                 
                 $.ajax({
-                    url: `http://localhost:2017/admin/doacao/${doa_id}`,
+                    url: `http://solidario.sytes.net:2017/admin/doacao/${doa_id}`,
                     headers: {
                         Authorization: "Bearer " + sessionStorage.token,
                     },
@@ -67,7 +67,7 @@
             const clickEstornarDoacao = (doa_id) => {
 
                 $.ajax({
-                    url: `http://localhost:2017/admin/doacao/${doa_id}`,
+                    url: `http://solidario.sytes.net:2017/admin/doacao/${doa_id}`,
                     headers: {
                         Authorization: "Bearer " + sessionStorage.token,
                     },
@@ -84,7 +84,7 @@
             };
           
             $(document).ready( function () {
-                const baseUrl = "http://localhost:2017";
+                const baseUrl = "http://solidario.sytes.net:2017";
                 // parse do queryString (.html?param=1&arg=2)
                 const params = (() => {
                     var params = {},
