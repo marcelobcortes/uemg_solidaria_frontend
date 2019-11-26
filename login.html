@@ -57,6 +57,9 @@
 		.login_blocked {
 			display: none;
 		}
+		.login_loading {
+			display: none;
+		}
     </style>
 </head>
 <body>
@@ -67,6 +70,23 @@
 				$(".login_blocked").show();
 				alert('Por favor, atualize ou troque seu navegador.');
 			}
+            if (sessionStorage.token) {
+				$(".login").hide();
+				$(".login_loading").show();
+                $.post("http://localhost:2017/public/validate",
+					{ token: sessionStorage.token },
+					(r)=>{
+                        if (r.usu_acesso === 2){
+						    document.location += "/../admin.html";
+                        } else {
+						    document.location += "/../usuario.html";
+                        }
+					}
+				).fail((e) => {
+                    $(".login").show();
+                    $(".login_loading").hide()
+                })
+            }
 			$("#submit").click(function (e) {
 				e.preventDefault();
 
@@ -105,6 +125,9 @@
         </div>
     </div>
     <section class="content">
+        <div class="login_loading">
+			<h3>Carregando...</h3>
+        </div>
         <div class="login_blocked">
 			<h3>Erro no navegador</h3>
         </div>
